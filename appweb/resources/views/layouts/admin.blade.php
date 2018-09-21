@@ -28,7 +28,7 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="nav-side-user.html" class="dropdown-item">Profile</a>
                         <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
-                        <a href="#" class="dropdown-item">Log Out</a>
+                        <a href="{{ route('logout') }} class="dropdown-item">Salir</a>
                     </div>
                 </div>
             </div>
@@ -94,9 +94,13 @@
                             <img alt="Image" src="http://pipeline.mediumra.re/assets/img/avatar-male-4.jpg" class="avatar">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="nav-side-user.html" class="dropdown-item">Profile</a>
+                            <a href="nav-side-user.html" class="dropdown-item">Perfil de {{ Auth::user()->name }}</a>
                             <a href="utility-account-settings.html" class="dropdown-item">Account Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">Salir</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -143,7 +147,7 @@
       <div class="container">
         <div class="row text-center text-md-left">
           <div class="col-6 col-lg-3">
-            <a href="www.example.com" class="d-sm-flex mb-3 mb-lg-0">
+            <a href="/mensaje" class="d-sm-flex mb-3 mb-lg-0">
 
 
               <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon mr-sm-3 flex-shrink-0">
@@ -328,6 +332,11 @@
         </div>
       </div>
     </section>
+
+    <section>
+      @yield('content')
+    </section>
+
 
     <footer class="spacer-y-3 bg-dark">
       <div class="container">

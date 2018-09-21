@@ -4,7 +4,7 @@
           <div class="col-lg-5 col-md-7">
             <div class="card py-3 shadow-lg">
               <div class="card-body">
-                <h1 class="h2 text-center">Create Account</h1>
+                <h1 class="h2 text-center">Iniciar sesión</h1>
                 <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -34,7 +34,7 @@
                       </label>
                     </div>
                   </div>
-                  <button class="btn btn-block btn-lg btn-primary" type="submit">Signup</button>
+                  <button class="btn btn-block btn-lg btn-primary" type="submit">Iniciar sesión</button>
                 </form>
                 <div class="text-center text-small mt-3">
                   <span>Already have an account? <a href="#">Log in here</a></span>
