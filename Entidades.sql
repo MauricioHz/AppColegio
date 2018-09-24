@@ -1,9 +1,9 @@
 Colegio
-Profesore
+Profesor
 Alumno
 Apoderado
 Curso
-Nivele
+Nivel
 Comunicacion
 ComunicacionApoderado
 
